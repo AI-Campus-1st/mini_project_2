@@ -1,5 +1,7 @@
 """Collector configuration values."""
 
-REGION_CODES = []
-COLLECTION_PERIOD = {}
-ENDPOINTS = {}
+from types import MappingProxyType
+
+REGION_CODES = ()
+COLLECTION_PERIOD = MappingProxyType({})
+ENDPOINTS = MappingProxyType({})

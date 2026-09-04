@@ -1,5 +1,5 @@
-python -m collector
 sqlite3 app.db < db/schema.sql
 sqlite3 app.db < db/seed_dummy.sql
 sqlite3 app.db < db/build_mart.sql
+python -m collector
 streamlit run app/main.py

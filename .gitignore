@@ -1,6 +1,8 @@
 data/*
 !data/raw/
-!data/raw/2026-08-18/
-!data/raw/2026-08-18/.gitkeep
+data/raw/**
+!data/raw/**/
+!data/raw/**/.gitkeep
 !data/logs/
+data/logs/**
 !data/logs/.gitkeep

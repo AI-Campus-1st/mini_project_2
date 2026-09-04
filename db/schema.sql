@@ -1,0 +1,1 @@
+-- Raw and mart table DDL goes here.

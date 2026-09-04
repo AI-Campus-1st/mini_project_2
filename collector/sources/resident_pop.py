@@ -1,0 +1,1 @@
+"""Resident population collection source."""

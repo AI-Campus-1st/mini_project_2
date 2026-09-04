@@ -1,13 +1,6 @@
 DELETE FROM mart_population_summary;
 
-WITH base AS (
-    SELECT region_code, substr(collected_at, 1, 10) AS summary_date
-    FROM raw_flow_population
-    UNION
-    SELECT region_code, substr(collected_at, 1, 10) AS summary_date
-    FROM raw_resident_population
-),
-flow_daily AS (
+WITH flow_daily AS (
     SELECT
         region_code,
         substr(collected_at, 1, 10) AS summary_date,
@@ -22,6 +15,13 @@ resident_daily AS (
         MAX(resident_population) AS resident_population
     FROM raw_resident_population
     GROUP BY region_code, substr(collected_at, 1, 10)
+),
+base AS (
+    SELECT region_code, summary_date
+    FROM flow_daily
+    UNION
+    SELECT region_code, summary_date
+    FROM resident_daily
 )
 INSERT INTO mart_population_summary (
     region_code,

@@ -7,15 +7,15 @@
 1. 환경 변수를 설정합니다.
 2. DB 스키마를 생성합니다.
 3. 더미 데이터를 적재합니다.
-4. 마트 테이블을 생성합니다.
-5. 수집기를 실행해 원천 데이터를 적재합니다.
+4. 수집기를 실행해 원천 데이터를 적재합니다.
+5. 마트 테이블을 생성합니다.
 6. 대시보드를 실행해 조회합니다.
 
 ```bash
 sqlite3 app.db < db/schema.sql
 sqlite3 app.db < db/seed_dummy.sql
-sqlite3 app.db < db/build_mart.sql
 python -m collector
+sqlite3 app.db < db/build_mart.sql
 streamlit run app/main.py
 ```
 

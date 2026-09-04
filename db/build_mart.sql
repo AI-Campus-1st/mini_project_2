@@ -19,7 +19,7 @@ resident_daily AS (
     SELECT
         region_code,
         substr(collected_at, 1, 10) AS summary_date,
-        SUM(resident_population) AS resident_population
+        MAX(resident_population) AS resident_population
     FROM raw_resident_population
     GROUP BY region_code, substr(collected_at, 1, 10)
 )

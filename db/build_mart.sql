@@ -11,7 +11,7 @@ flow_daily AS (
     SELECT
         region_code,
         substr(collected_at, 1, 10) AS summary_date,
-        SUM(flow_population) AS flow_population
+        MAX(flow_population) AS flow_population
     FROM raw_flow_population
     GROUP BY region_code, substr(collected_at, 1, 10)
 ),

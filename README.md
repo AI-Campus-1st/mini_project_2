@@ -19,7 +19,7 @@ python -m collector
 streamlit run app/main.py
 ```
 
-전체 명령어 예시는 `/home/runner/work/mini_project_2/mini_project_2/commands` 파일에도 정리했습니다.
+전체 명령어 예시는 저장소 루트의 `commands` 파일에도 정리했습니다.
 
 ## 스크린샷
 추후 추가 예정

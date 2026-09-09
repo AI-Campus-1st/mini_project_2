@@ -4,7 +4,7 @@ import pandas as pd
 from components import make_kpi
 from views.repository import load_mart_priority_score
 
-st.title("송파구, 노원구, 서초구 순으로 카페 출점 후보 선정")
+st.title("송파구, 노원구, 구로구 순으로 카페 출점 후보 선정")
 
 st.divider()
 

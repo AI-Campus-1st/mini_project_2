@@ -1,0 +1,11 @@
+# Dashboard
+streamlit
+plotly
+pandas
+numpy
+httpx
+requests
+urllib3
+SQLAlchemy
+PyMySQL
+python-dotenv

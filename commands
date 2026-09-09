@@ -1,0 +1,37 @@
+collector
+    -> sources
+        -> cafe.py
+            - get_cafe_data(): 소상공인 데이터를 가져오는 function
+        -> flow_pop.py
+            - get_de_facto_population(): 생활인구 데이터를 가져오기위한 URL을 만들고 request를 보내는 function
+        -> resident_pop.py
+            - get_living_population(): 거주인구 데이터를 가져오는 function
+    -> client.py 
+        - make_logger(): logging을 위한 logger을 만드는 function
+        - fetch(): 실제로 request를 보내고 받아온 값을 json으로 변환해 return하는 function
+    -> config.py
+        - config(): 지역코드, 수집 기간, 엔드포인트와 같은 기본 설정값을 가져오는 function
+    -> loader.py
+    -> transform.py
+        - transform_de_facto_population(): db에 저장할 raw 생활인구 데이터를 조금 정제하는 function
+        - transform_population(): 거주인구 데이터를 정제해서 clean 데이터로 만드는 function
+        - transform_cafe(): 카페 데이터를 정제해서 clean 데이터로 만드는 function
+    -> __main__.py
+        - 진입점
+        - main(): collector 폴더에 있는 function들을 가져와 수집을 실제로 진행하는 function
+
+db
+    -> build_mart.py
+        - make_monthly_de_facto_population_per_time_mart(): monthly_de_facto_population_per_time_mart 테이블을 만드는 function
+        - make_state_monthly_mart(): state_monthly_mart 테이블을 만드는 function
+        - make_state_hourly_mart(): state_hourly_mart 테이블을 만드는 function
+        - make_priority_score_mart(): priority_score_mart 테이블을 만드는 function
+    -> __main__.py
+        - 진입점
+        - main(): 데이터베이스를 읽고 raw 데이터를 가져와 mart 테이블로 변환시켜 insert하는 function
+    -> schema.sql
+        - 데이터베이스를 만들고 테이블을 만든다
+    -> seed_dummy.sql
+        - 시험하기위한 dummy 데이터를 insert하기 위한 query
+
+

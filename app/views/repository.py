@@ -15,7 +15,8 @@ def connect():
 def load_mart_monthly_de_facto_population_per_time() -> pd.DataFrame:
     with connect() as con:
         q = """
-        SELECT * FROM mart_monthly_de_facto_population_per_time;
+        SELECT * FROM mart_monthly_de_facto_population_per_time
+        WHERE CAST(time_hour AS UNSIGNED) BETWEEN 8 AND 22;
         """
         return pd.read_sql(q, con)
 
@@ -31,7 +32,8 @@ def load_mart_state_monthly() -> pd.DataFrame:
 def load_mart_state_hourly() -> pd.DataFrame:
     with connect() as con:
         q = """
-        SELECT * FROM mart_state_hourly;
+        SELECT * FROM mart_state_hourly
+        WHERE CAST(time_hour AS UNSIGNED) BETWEEN 8 AND 22;
         """
         return pd.read_sql(q, con)
 

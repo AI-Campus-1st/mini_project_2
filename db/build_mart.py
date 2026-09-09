@@ -6,6 +6,7 @@ def make_monthly_de_facto_population_per_time_mart(df_raw):
 
     df["ymd"] = pd.to_datetime(df["ymd"]).dt.normalize()
     df["time_hour"] = pd.to_numeric(df["time_hour"], errors="coerce")
+    df = df.loc[df["time_hour"].between(8, 22)].copy()
     df["de_facto_population"] = pd.to_numeric(df["de_facto_population"], errors="coerce")
 
     daily_hourly = (df.groupby(["ymd", "time_hour"], as_index=False)["de_facto_population"].sum())
@@ -25,6 +26,7 @@ def make_state_monthly_mart(df_raw, df_cafe, df_state):
 
     df["ymd"] = pd.to_datetime(df["ymd"]).dt.normalize()
     df["time_hour"] = pd.to_numeric(df["time_hour"], errors="coerce")
+    df = df.loc[df["time_hour"].between(8, 22)].copy()
     df["de_facto_population"] = pd.to_numeric(df["de_facto_population"], errors="coerce")
 
     # 자치구별 하루 영업시간 평균
@@ -96,6 +98,7 @@ def make_state_hourly_mart(df_raw, df_state):
 
     df["ymd"] = pd.to_datetime(df["ymd"], errors="coerce")
     df["time_hour"] = pd.to_numeric(df["time_hour"], errors="coerce")
+    df = df.loc[df["time_hour"].between(8, 22)].copy()
     df["de_facto_population"] = pd.to_numeric(
         df["de_facto_population"], errors="coerce"
     )

@@ -10,7 +10,12 @@ def main():
     engine = make_engine()
     try:
         with engine.connect() as conn:
-            de_facto_population_raw = pd.read_sql("SELECT * FROM de_facto_population_raw", conn)
+            # 모든 마트는 영업시간 08~22시(양 끝 포함)만 사용한다.
+            de_facto_population_raw = pd.read_sql(
+                text("SELECT * FROM de_facto_population_raw "
+                     "WHERE CAST(time_hour AS UNSIGNED) BETWEEN 8 AND 22"),
+                conn,
+            )
             cafe_clean = pd.read_sql("SELECT * FROM cafe_clean", conn)
             state_dim = pd.read_sql("SELECT * FROM state_dim", conn)
             population_clean = pd.read_sql("SELECT * FROM population_clean", conn)

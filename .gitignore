@@ -1,9 +1,8 @@
-data/*
-!data/raw/
-data/raw/**
-!data/raw/**/
-!data/raw/**/.gitkeep
-!data/logs/
-data/logs/**
-!data/logs/**/
-!data/logs/.gitkeep
+thought_process.ipynb
+transfer_data.py
+
+data/clean/*
+data/logs/*
+data/raw/*
+
+.env

@@ -6,7 +6,7 @@
 
 ## Streamlit 배포된 링크
 
-* https://mainpy-aljf2f9qwevehjymywyuxm.streamlit.app/
+* <https://mainpy-aljf2f9qwevehjymywyuxm.streamlit.app/>
 
 ## 실행 순서
 
@@ -22,4 +22,5 @@
     * streamlit run app/main.py
 
 ## 대시보드 예시
+
 ![streamlit example](data/picture/example.png)

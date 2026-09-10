@@ -1,7 +1,8 @@
-thought_process.ipynb
-
 data/clean/*
 data/logs/*
 data/raw/*
+
+personal
+personal/*
 
 .env

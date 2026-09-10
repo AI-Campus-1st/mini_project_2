@@ -11,7 +11,7 @@ st.divider()
 st.markdown("## 출점 후보 선정 조건")
 st.markdown("1. **카페 1개당 생활인구**가 평균보다 높은 자치구")
 st.markdown("2. **최근 생활인구 증가율**이 늘어나고 있는 자치구")
-st.markdown("3. **생활인구 활동 배율**이 평균보다 높은 자치구")
+st.markdown("3. **생활인구 활동 배율**이 1 보다 높은 자치구")
 
 st.divider()
 
